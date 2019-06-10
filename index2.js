@@ -1,4 +1,4 @@
-let initialValues = [5, 10, 101, 300]
+let initialValues = [5, 10, 101, 300];
 let doubledValues = initialValues.map(oneValue => {
     if (oneValue % 2 === 0) return oneValue * 2
 
@@ -7,8 +7,6 @@ let doubledValues = initialValues.map(oneValue => {
 
 // advanced example checking for falsy with the ternary operator
 let doubledValues2 = initialValues.map(oneValue => oneValue % 2 ? oneValue : oneValue * 2)
-
-
 
 // let doubledValues2 = initialValues.map(function (oneValue) {
 //     return oneValue * 2
@@ -86,6 +84,8 @@ let goodStudentsConversation =
 //     return acumulator + " *** " + currentStudent.name
 // }, "no valgo nada")
 
+// here we accumulate add new keys to an empty object via the reduce
+// the new keys are  student1, student2...
 let studentsBreakDown = students.reduce((acum, curStudent, idx) => {
     acum["student" + (idx + 1)] = 
         `the student name is ${curStudent.name}`

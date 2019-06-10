@@ -10,8 +10,16 @@
 
 <body>
     <script>
+        // sorting numbers
         var numbers2 = [22, 23, 99, 68, 1, 1, 0, 9, 1, 112, 223, 64, 18];
 
+        // here 
+        /* (a, b) => {
+            console.log(a, b)
+            if (a > b) return 1
+            if (a < b) return -1
+        }
+        is the sorter function */
         var sortedNumbers = numbers2.sort((a, b) => {
             console.log(a, b)
             if (a > b) return 1
@@ -23,8 +31,10 @@
         // this equals to this simpler version :) :)
         // numbers.sort((a, b) => a - b);
 
+        // here we sort these strings
         var words2 = ["Dani", "Francho", "Vane", "Shakir", "Mike"];
 
+        // sorter function
         words2.sort((a, b) => {
             if (a.toLowerCase() > b.toLowerCase()) {
                 return 1;
@@ -36,7 +46,6 @@
 
             return 0;
         });
-
     </script>
 </body>
 
