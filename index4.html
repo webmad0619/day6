@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <button id="asc">Order asc</button>
+        <button id="desc">Order desc</button>
+    </nav>
+    <ul id="students"></ul>
+    <script>
+        // this defines my students lists
+        var students = ["francho no desesperes", "shak", "vane", "jose", "javi", "dani"]
+
+        // this function prints the students
+        function printStudents() {
+            // first reset the innerHTML of the students container
+            document.getElementById("students").innerHTML = ""
+
+            // this generates all the list items, one for each student
+            students.forEach(student => {
+                var newLiDOMEl = document.createElement("li")
+                // this writes the student name inside of the 
+                // newly generated li
+                newLiDOMEl.innerHTML = student
+                // this makes the student name in the li available in the DOM
+                document.getElementById("students").appendChild(newLiDOMEl)
+            })
+        }
+
+        // desc event handler. when clicking on it this will happen...
+        document.querySelector("#desc").onclick = function () {
+            // sorting descending
+            students.sort(function(a,b) {
+                if (a.toLocaleLowerCase() > b.toLocaleLowerCase())  return -1
+                if (a.toLocaleLowerCase() < b.toLocaleLowerCase())  return 1
+            })
+            // and then print them already sorted
+            printStudents()
+        }
+
+        // asc event handler. when clicking on it this will happen...
+        document.querySelector("#asc").onclick = function () {
+            // sorting ascending
+            students.sort(function(a,b) {
+                if (a.toLocaleLowerCase() > b.toLocaleLowerCase())  return 1
+                if (a.toLocaleLowerCase() < b.toLocaleLowerCase())  return -1
+            })
+            // and then print them already sorted
+            printStudents()
+        }
+    </script>
+</body>
+
+</html>
